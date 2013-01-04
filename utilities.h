@@ -11,6 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef enum {
+    FALSE, TRUE
+} Bool;
+
 void clear_input() {
     char ch;
     while ((ch = getchar()) != '\n' && ch != EOF);
