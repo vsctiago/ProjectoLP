@@ -38,6 +38,7 @@ typedef enum {
     A = 'A', B = 'B', C = 'C', D = 'D'
 } Category;
 
+//:TODO: VERIFY IF CATEGORY ENUM WORKING WITH STRUCT
 typedef struct {
     char name[NAME_LENGTH];
     Address address;
@@ -51,26 +52,26 @@ Person getCat(Person person) {
     Bool v = FALSE;
     
     do {
+        scanf("%c", &person.category);
         if(cat == 'a' || cat == 'A') {
-            puts("Invalid input.");
             person.category = A;
             v = TRUE;
         } else if (cat == 'b' || cat == 'B') {
-            puts("Invalid input.");
             person.category = B;
             v = TRUE;
         } else if (cat == 'c' || cat == 'C') {
-            puts("Invalid input.");
             person.category = C;
             v = TRUE;
         } else if (cat == 'd' || cat == 'D') {
-            puts("Invalid input.");
             person.category = D;
             v = TRUE;
         } else {
+            puts("Invalid input.");
             puts("Insert a valid category!");
+            v = FALSE;
+            
         }
-    } while (v = FALSE);
+    } while (v == FALSE);
     return person;
 }
 

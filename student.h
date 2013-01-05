@@ -23,6 +23,8 @@ typedef enum {
     y = 'y', n = 'n'
 } LicenseRev;
 
+//:TODO: VALIDATE ID = 8 NUMBERS -- init= 99999999
+
 typedef struct {
     unsigned char id[ID_LENGTH];
     Person person;
@@ -91,33 +93,33 @@ Student readStudentsFile(Student students[]) {
 }
 
 Student insertStudent(Student students[], int studentnr) {
-    printf("ID: %c", NEWLINE);
+    printf("ID: ");
     fgets(students[studentnr].id, ID_LENGTH, stdin);
     clear_input();
-    printf("Full name: %c", NEWLINE);
+    printf("Full name: ");
     fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
-    printf("Street: %c", NEWLINE);
+    printf("Street: ");
     fgets(students[studentnr].person.address.street, NAME_LENGTH, stdin);
-    printf("Door number: %c", NEWLINE);
+    printf("Door number: ");
     fgets(students[studentnr].person.address.number, DOOR_NR, stdin);
     clear_input();
-    printf("Postalcode: %c", NEWLINE);
+    printf("Postalcode: ");
     fgets(students[studentnr].person.address.postalcode.postalcode, POSTALCODE, stdin);
     clear_input();
-    printf("City: %c", NEWLINE);
+    printf("City: ");
     fgets(students[studentnr].person.address.city, CITY_LENGTH, stdin);
-    printf("Phonenumber: %c", NEWLINE);
+    printf("Phonenumber: ");
     fgets(students[studentnr].person.phonenr, PHONE_LENGTH, stdin);
     clear_input();
-    printf("Birthday: (dia-mes-ano): %c", NEWLINE);
+    printf("Birthday: (dia-mes-ano): ");
     scanf("%hu", &students[studentnr].person.date.tm_mday);
     scanf("%hu", &students[studentnr].person.date.tm_mon);
     scanf("%hu", &students[studentnr].person.date.tm_year);
     clear_input();
-    printf("Category: (A, B, C ou D): %c", NEWLINE);
-    scanf("%c", &students[studentnr].person.category);
+    printf("Category: (A, B, C ou D): ");
+    getCat(students[studentnr].person);
     clear_input();
-    printf("Revalidate license?(y ou n): %c", NEWLINE);
+    printf("Revalidate license?(y ou n): ");
     scanf("%c", &students[studentnr].licenserev);
     printf("Student successfully added.%c", NEWLINE);
     
