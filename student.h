@@ -92,15 +92,16 @@ Student readStudentsFile(Student students[]) {
     return students[STD_MAX];
 }
 
-int searchFunction(Student students[], unsigned int sn){
+/*int searchFunction(Student students[], unsigned int sn){
     int pos = 0, studentnr;
     
-    while (pos < STD_MAX) && (sn != students[pos].id){
+    while (pos < STD_MAX) && (sn != students[pos].id) {
         if (studentnr == sn) {
             
         }
-    } return studentnr;
-}
+    }
+    return studentnr;
+}*/
 
 Student insertStudent(Student students[], int studentnr) {
     printf("ID: ");
