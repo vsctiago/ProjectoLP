@@ -92,12 +92,13 @@ Student readStudentsFile(Student students[]) {
     return students[STD_MAX];
 }
 
-
-int searchFunction(Student students[]){
-    int i, studentnr;
+int searchFunction(Student students[], unsigned int sn){
+    int pos = 0, studentnr;
     
-    for(i = 0; i < students[STD_MAX]; i++){
-        
+    while (pos < STD_MAX) && (sn != students[pos].id){
+        if (studentnr == sn) {
+            
+        }
     } return studentnr;
 }
 
