@@ -92,6 +92,15 @@ Student readStudentsFile(Student students[]) {
     return students[STD_MAX];
 }
 
+
+int searchFunction(Student students[]){
+    int i, studentnr;
+    
+    for(i = 0; i < students[STD_MAX]; i++){
+        
+    } return studentnr;
+}
+
 Student insertStudent(Student students[], int studentnr) {
     printf("ID: ");
     fgets(students[studentnr].id, ID_LENGTH, stdin);
