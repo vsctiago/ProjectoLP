@@ -19,6 +19,10 @@ typedef struct {
     unsigned short salary;
 } Instructor;
 
+Instructor insertInstructor(Instructor Instructors[], int Instructornr){
+    
+}
+
 int menu_Instrutor() {
 
     int choice;

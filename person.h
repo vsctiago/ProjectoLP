@@ -15,19 +15,19 @@
 #define NAME_LENGTH 80
 #define STREET_LENGTH 60
 #define CITY_LENGTH 20
-
+#define DOOR_NR 3
+#define POSTALCODE 8
 
 //:TODO: Passar "unsigned" para "char" (vectores)
-//:TODO: postalcode (como inserir "-" "traçinho")
 typedef struct {
-    char localnr[4], streetnr[3];
+    unsigned char postalcode[POSTALCODE];
 } PostalCode;
 
 typedef struct {
-    char street[STREET_LENGTH];
-    unsigned short int number;
+    unsigned char street[STREET_LENGTH];
+    unsigned char number[DOOR_NR];
     PostalCode postalcode;
-    char city[CITY_LENGTH];
+    unsigned char city[CITY_LENGTH];
 } Address;
 
 typedef struct tm Date;
@@ -37,11 +37,32 @@ typedef enum {
 } Category;
 
 //:TODO: Validacoes e restricoes
-Category getCat() {
-    char dc;
+Person getCat(Person person) {
+    char cat;
+    Bool v = FALSE;
     
-    if(dc == 'A')
-    scanf("%c", &dc);
+    do {
+        if(cat == 'a' || cat == 'A') {
+            puts("Invalid input.");
+            person.category = A;
+            v = TRUE;
+        } else if (cat == 'b' || cat == 'B') {
+            puts("Invalid input.");
+            person.category = B;
+            v = TRUE;
+        } else if (cat == 'c' || cat == 'C') {
+            puts("Invalid input.");
+            person.category = C;
+            v = TRUE;
+        } else if (cat == 'd' || cat == 'D') {
+            puts("Invalid input.");
+            person.category = D;
+            v = TRUE;
+        } else {
+            puts("Insert a valid category!");
+        }
+    }while (v = FALSE);
+    return person;
 }
 
 typedef struct {

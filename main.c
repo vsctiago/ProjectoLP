@@ -14,25 +14,10 @@
 #include "utilities.h"
 #define SCALE 50
 #define CITYSIZE 20
-
 #define INST_MAX 10
-
-
 /*
  * 
  */
-void alterar_aluno(Student alunos[], int nr_aluno) {
-
-}
-
-void listar_aluno() {
-
-}
-
-// Funcao para adicionar instrutores
-Instructor insertInstructor(Instructor Instructors[], int Instructornr){
-    
-}
 
 int main(void) {
 
