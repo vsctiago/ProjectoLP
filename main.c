@@ -13,7 +13,7 @@
 #include "instructor.h"
 #define SCALE 50
 #define CITYSIZE 20
-#define CAP_MAX 5
+#define STD_MAX 10
 #define INST_MAX 10
 
 /*
@@ -38,23 +38,27 @@ Instructor insertInstructor(Instructor Instructors[], int Instructornr){
 
 // submenu "Gerir dados do Instrutor"
 
-void students_file(Student students[]) {
-    int inst_nr;
+void initStudentsFile(){
     
-    FILE *pStudents = fopen("alunos","w");
+}
+
+void students_file(Student students[]) {
+    int frtn;
+    
+    FILE *pStudents = fopen("students","r");
     if (pStudents == (FILE *) NULL){
         puts("Ficheiro nao existente.");
         puts("A criar ficheiro...");
         
     }else{
-        inst_nr = fwrite(students, sizeof(Student), INST_MAX, pStudents);
+        frtn = fwrite(students, sizeof(Student), INST_MAX, pStudents);
         fclose(pStudents);
     }
 }
 
 int main(void) {
 
-    Student students[CAP_MAX];
+    Student students[STD_MAX];
     int choice, choice_students, i, studentnr = 0;
 
 
@@ -63,7 +67,7 @@ int main(void) {
         switch (choice) {
             case 1:
                 do {
-                    choice_students = menu_aluno();
+                    choice_students = studentMenu();
                     switch (choice_students) {
                         case 1:
                             puts("Selecionada opcao 1 - Adicionar dados");
@@ -75,7 +79,7 @@ int main(void) {
                         case 3:
                             puts("Selecionada opcao 3 - Listar dados");
                             puts("Alunos inscritos:");
-                            for (i = 0; i < CAP_MAX; i++) {
+                            for (i = 0; i < STD_MAX; i++) {
                                 printf("%d - %s", i, students[i].person.name);
                             }
 

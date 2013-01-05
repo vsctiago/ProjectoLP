@@ -62,9 +62,9 @@ Student insertStudent(Student Students[], int studentnr) {
     return Students[studentnr];
 }
 
-int menu_aluno() {
+int studentMenu() {
 
-    int opcao;
+    int option;
 
     do {
         printf("\t\t\t* Gerir dados do Aluno *\n\n");
@@ -77,10 +77,10 @@ int menu_aluno() {
         printf("                        |5-Voltar          |\n");
         printf("                        |------------------|\n\n");
         printf("\nEscolha uma opcao: ");
-        scanf("%d", &opcao);
-    } while (opcao > 5 || opcao < 1);
+        scanf("%d", &option);
+    } while (option > 5 || option < 1);
 
-    return opcao;
+    return option;
 }
 
 #ifdef	__cplusplus
