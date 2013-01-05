@@ -55,7 +55,7 @@ Student createStudentsFile(Student students[]) {
     return students[STD_MAX];
 }
 
-Student studentsFile(Student students[]) {
+Student readStudentsFile(Student students[]) {
     int frtn, i;
     
     FILE *pStudents = fopen("students","r");
@@ -65,7 +65,7 @@ Student studentsFile(Student students[]) {
         createStudentsFile(students);
         students[STD_MAX] = initStudentsFile(students);
         puts("Ficheiro criado.");
-        studentsFile(students);
+        readStudentsFile(students);
         for(i=0; i > STD_MAX; i++){
             printf("%d: %c", i, students[i].id);
         }
@@ -92,7 +92,7 @@ int main(void) {
             case 1:
                 do {
                     stdopt = studentMenu();
-                    students[STD_MAX] = studentsFile(students);
+                    students[STD_MAX] = readStudentsFile(students);
                     switch (stdopt) {
                         case 1:
                             puts("Selecionada opcao 1 - Adicionar dados");
