@@ -40,9 +40,9 @@ typedef enum {
 
 //:TODO: VERIFY IF CATEGORY ENUM WORKING WITH STRUCT
 typedef struct {
-    char name[NAME_LENGTH];
+    unsigned char name[NAME_LENGTH];
     Address address;
-    char phonenr[PHONE_LENGTH];
+    unsigned char phonenr[PHONE_LENGTH];
     Date date;
     Category category;
 } Person;
