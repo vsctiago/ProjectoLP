@@ -13,6 +13,9 @@
 #include "person.h"
 #include "utilities.h"
 #define ID_LENGTH 8
+#define STD_MAX 10
+
+const char EMPTY_STRING[] = "\0";
 
 //:TODO: Validacoes e restricoes
 typedef enum {
@@ -26,6 +29,53 @@ typedef struct {
 } Student;
 
 //:TODO: Must do validations for licenserev
+
+
+Student initStudentsFile(Student students[]){
+    unsigned short int i;
+    
+    for(i = 0; i < STD_MAX; i++){
+        strcpy(students[i++].id, EMPTY_STRING);
+    }
+    return students[STD_MAX];
+}
+
+Student createStudentsFile(Student students[]) {
+    int frtn;
+    
+    FILE *pStudents = fopen("students","w");
+    if(pStudents == (FILE *) NULL){
+        printf("Falha ao criar ficheiro");
+    }else{
+        frtn = fwrite(students, sizeof(Student), STD_MAX, pStudents);
+    }
+    return students[STD_MAX];
+}
+
+Student readStudentsFile(Student students[]) {
+    int frtn, i;
+    
+    FILE *pStudents = fopen("students","r");
+    if (pStudents == (FILE *) NULL){
+        puts("Ficheiro nao existente.");
+        puts("A criar ficheiro...");
+        createStudentsFile(students);
+        students[STD_MAX] = initStudentsFile(students);
+        puts("Ficheiro criado.");
+        readStudentsFile(students);
+        for(i=0; i > STD_MAX; i++){
+            printf("%d: %c", i, students[i].id);
+        }
+    }else{
+        fread(students, sizeof(Student), STD_MAX, pStudents);
+        for(i=0; i < STD_MAX; i++){
+            printf("%d: %s", i, students[i].id);
+        }
+        fclose(pStudents);
+    }
+    
+    return students[STD_MAX];
+}
 
 Student insertStudent(Student Students[], int studentnr) {
     puts("Inserir numero de identificacao: ");

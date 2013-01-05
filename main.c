@@ -14,10 +14,10 @@
 #include "utilities.h"
 #define SCALE 50
 #define CITYSIZE 20
-#define STD_MAX 10
+
 #define INST_MAX 10
 
-const char EMPTY_STRING[] = "\0";
+
 /*
  * 
  */
@@ -32,52 +32,6 @@ void listar_aluno() {
 // Funcao para adicionar instrutores
 Instructor insertInstructor(Instructor Instructors[], int Instructornr){
     
-}
-
-Student initStudentsFile(Student students[]){
-    unsigned short int i;
-    
-    for(i = 0; i < STD_MAX; i++){
-        strcpy(students[i++].id, EMPTY_STRING);
-    }
-    return students[STD_MAX];
-}
-
-Student createStudentsFile(Student students[]) {
-    int frtn;
-    
-    FILE *pStudents = fopen("students","w");
-    if(pStudents == (FILE *) NULL){
-        printf("Falha ao criar ficheiro");
-    }else{
-        frtn = fwrite(students, sizeof(Student), STD_MAX, pStudents);
-    }
-    return students[STD_MAX];
-}
-
-Student readStudentsFile(Student students[]) {
-    int frtn, i;
-    
-    FILE *pStudents = fopen("students","r");
-    if (pStudents == (FILE *) NULL){
-        puts("Ficheiro nao existente.");
-        puts("A criar ficheiro...");
-        createStudentsFile(students);
-        students[STD_MAX] = initStudentsFile(students);
-        puts("Ficheiro criado.");
-        readStudentsFile(students);
-        for(i=0; i > STD_MAX; i++){
-            printf("%d: %c", i, students[i].id);
-        }
-    }else{
-        fread(students, sizeof(Student), STD_MAX, pStudents);
-        for(i=0; i < STD_MAX; i++){
-            printf("%d: %s", i, students[i].id);
-        }
-        fclose(pStudents);
-    }
-    
-    return students[STD_MAX];
 }
 
 int main(void) {
@@ -99,7 +53,7 @@ int main(void) {
                             insertStudent(students, studentnr);
                             break;
                         case 2:
-
+                            puts("Selecionada opcao 2 - Modificar dados");
                             break;
                         case 3:
                             puts("Selecionada opcao 3 - Listar dados");
