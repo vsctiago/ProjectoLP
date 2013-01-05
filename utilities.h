@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "instructor.h"
+#include "person.h"
+#include "student.h"
 
 typedef enum {
     FALSE, TRUE

@@ -29,7 +29,7 @@ typedef struct {
 
 Student insertStudent(Student Students[], int studentnr) {
     puts("Inserir numero de identificacao: ");
-    scanf("%c", &Students[studentnr].id);
+    fgets(Students[studentnr].id, ID_LENGTH, stdin);
     clear_input();
     puts("Escrever nome completo: ");
     fgets(Students[studentnr].person.name, NAME_LENGTH, stdin);
@@ -66,7 +66,7 @@ Student insertStudent(Student Students[], int studentnr) {
 
 int studentMenu() {
 
-    int option;
+    int stdopt;
 
     do {
         printf("\t\t\t* Gerir dados do Aluno *\n\n");
@@ -79,10 +79,10 @@ int studentMenu() {
         printf("                        |5-Voltar          |\n");
         printf("                        |------------------|\n\n");
         printf("\nEscolha uma opcao: ");
-        scanf("%d", &option);
-    } while (option > 5 || option < 1);
+        scanf("%d", &stdopt);
+    } while (stdopt > 5 || stdopt < 1);
 
-    return option;
+    return stdopt;
 }
 
 #ifdef	__cplusplus

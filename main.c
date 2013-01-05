@@ -18,13 +18,10 @@
 #define INST_MAX 10
 
 const char EMPTY_STRING[] = "\0";
-
 /*
  * 
  */
-
 void alterar_aluno(Student alunos[], int nr_aluno) {
-
 
 }
 
@@ -37,10 +34,6 @@ Instructor insertInstructor(Instructor Instructors[], int Instructornr){
     
 }
 
-// submenu "Gerir dados do Aluno"
-
-// submenu "Gerir dados do Instrutor"
-
 Student initStudentsFile(Student students[]){
     unsigned short int i;
     
@@ -50,7 +43,7 @@ Student initStudentsFile(Student students[]){
     return students[STD_MAX];
 }
 
-void createStudentsFile(Student students[]) {
+Student createStudentsFile(Student students[]) {
     int frtn;
     
     FILE *pStudents = fopen("students","w");
@@ -62,8 +55,8 @@ void createStudentsFile(Student students[]) {
     return students[STD_MAX];
 }
 
-void studentsFile(Student students[]) {
-    int frtn;
+Student studentsFile(Student students[]) {
+    int frtn, i;
     
     FILE *pStudents = fopen("students","r");
     if (pStudents == (FILE *) NULL){
@@ -71,9 +64,16 @@ void studentsFile(Student students[]) {
         puts("A criar ficheiro...");
         createStudentsFile(students);
         students[STD_MAX] = initStudentsFile(students);
-        studentsFile();
+        puts("Ficheiro criado.");
+        studentsFile(students);
+        for(i=0; i > STD_MAX; i++){
+            printf("%d: %c", i, students[i].id);
+        }
     }else{
         fread(students, sizeof(Student), STD_MAX, pStudents);
+        for(i=0; i < STD_MAX; i++){
+            printf("%d: %s", i, students[i].id);
+        }
         fclose(pStudents);
     }
     
@@ -83,7 +83,7 @@ void studentsFile(Student students[]) {
 int main(void) {
 
     Student students[STD_MAX];
-    int option, choice_students, i, studentnr = 0;
+    int option, stdopt, i, studentnr = 0;
 
 
     do {
@@ -91,9 +91,9 @@ int main(void) {
         switch (option) {
             case 1:
                 do {
-                    choice_students = studentMenu();
+                    stdopt = studentMenu();
                     students[STD_MAX] = studentsFile(students);
-                    switch (choice_students) {
+                    switch (stdopt) {
                         case 1:
                             puts("Selecionada opcao 1 - Adicionar dados");
                             insertStudent(students, studentnr);
@@ -116,14 +116,14 @@ int main(void) {
                             printf("Seleccionada opcao 0 - Voltar\n");
                             break;
                     }
-                } while (choice_students != 5);
+                } while (stdopt != 5);
             case 2:
                 break;
             case 3:
                 break;
 
         }
-    } while (choice_students != 4);
+    } while (stdopt != 4);
 
 
     return 0;
