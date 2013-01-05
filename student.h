@@ -107,7 +107,7 @@ Student insertStudent(Student students[], int studentnr) {
     printf("City: %c", NEWLINE);
     fgets(students[studentnr].person.address.city, CITY_LENGTH, stdin);
     printf("Phonenumber: %c", NEWLINE);
-    scanf("%lu", &students[studentnr].person.phonenr);
+    fgets(students[studentnr].person.phonenr, PHONE_LENGTH, stdin);
     clear_input();
     printf("Birthday: (dia-mes-ano): %c", NEWLINE);
     scanf("%hu", &students[studentnr].person.date.tm_mday);

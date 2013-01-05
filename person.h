@@ -18,6 +18,7 @@
 #define CITY_LENGTH 20
 #define DOOR_NR 3
 #define POSTALCODE 8
+#define PHONE_LENGTH 9
 
 typedef struct tm Date;
 
@@ -40,7 +41,7 @@ typedef enum {
 typedef struct {
     char name[NAME_LENGTH];
     Address address;
-    unsigned long int phonenr;
+    char phonenr[PHONE_LENGTH];
     Date date;
     Category category;
 } Person;
