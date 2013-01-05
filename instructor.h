@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "person.h"
-#include "utilities.h"
 
 typedef struct {
     unsigned short int licensenr;
@@ -28,16 +27,15 @@ int menu_Instrutor() {
     int choice;
 
     do {
-        printf("\t\t\t* Gerir dados do Instrutor *\n\n");
-        printf("Por Favor, escolha uma das seguintes opcoes digitanto o numero correspondente \n\n\n");
+        printf("\t\t\t* Manage Instructor Data *\n\n");
         printf("                        |------------------|\n");
-        printf("                        |1-Adicionar dados |\n");
-        printf("                        |2-Alterar dados   |\n");
-        printf("                        |3-Listar dados    |\n");
-        printf("                        |4-Remover dados   |\n");
-        printf("                        |5-Voltar          |\n");
+        printf("                        |1-Add\t|\n");
+        printf("                        |2-Modify\t|\n");
+        printf("                        |3-List\t|\n");
+        printf("                        |4-Remove\t|\n");
+        printf("                        |5-Back\t|\n");
         printf("                        |------------------|\n\n");
-        printf("\nEscolha uma opcao: ");
+        printf("\nSelect an option: ");
         scanf("%d", &choice);
     } while (choice > 5 || choice < 1);
 

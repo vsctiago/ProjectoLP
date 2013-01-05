@@ -5,10 +5,13 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1">
         <file>
+            <url>person.h</url>
+            <line>39</line>
+        </file>
+        <file>
             <url>student.h</url>
-            <line>16</line>
-            <line>27</line>
-            <line>54</line>
+            <line>21</line>
+            <line>48</line>
         </file>
     </editor-bookmarks>
 </project-private>

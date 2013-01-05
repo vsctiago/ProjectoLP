@@ -18,8 +18,7 @@
 /*
  * 
  */
-
-int main(void) {
+int main() {
 
     Student students[STD_MAX];
     int option, stdopt, i, studentnr = 0;

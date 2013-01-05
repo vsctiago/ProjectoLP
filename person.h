@@ -11,12 +11,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "utilities.h"
 
 #define NAME_LENGTH 80
 #define STREET_LENGTH 60
 #define CITY_LENGTH 20
 #define DOOR_NR 3
 #define POSTALCODE 8
+
+typedef struct tm Date;
 
 //:TODO: Passar "unsigned" para "char" (vectores)
 typedef struct {
@@ -30,11 +33,21 @@ typedef struct {
     unsigned char city[CITY_LENGTH];
 } Address;
 
-typedef struct tm Date;
-
 typedef enum {
     A = 'A', B = 'B', C = 'C', D = 'D'
 } Category;
+
+typedef struct {
+    char name[NAME_LENGTH];
+    Address address;
+    unsigned long int phonenr;
+    Date date;
+    Category category;
+} Person;
+
+
+
+
 
 //:TODO: Validacoes e restricoes
 Person getCat(Person person) {
@@ -61,17 +74,11 @@ Person getCat(Person person) {
         } else {
             puts("Insert a valid category!");
         }
-    }while (v = FALSE);
+    } while (v = FALSE);
     return person;
 }
 
-typedef struct {
-    char name[NAME_LENGTH];
-    Address address;
-    unsigned long int phonenr;
-    Date date;
-    Category category;
-} Person;
+
 
 
 #ifdef	__cplusplus

@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "person.h"
-#include "utilities.h"
 #define ID_LENGTH 8
 #define STD_MAX 10
 #define CAT_LENGTH 1
@@ -30,9 +29,25 @@ typedef struct {
     LicenseRev licenserev;
 } Student;
 
+Student getLicenseRev(Student student) {
+    char lr;
+    Bool v = FALSE;
+    
+    do {
+        if (lr == 'y' || lr == 'Y') {
+            student.licenserev = y;
+            v = TRUE;
+        }else if (lr == 'n' || lr == 'N') { 
+            student.licenserev = n;
+            v = TRUE;
+        }
+    } while (v = FALSE);
+        return student;
+} 
+
 //:TODO: Must do validations for licenserev
 
-Student initStudentsFile(Student students[]){
+Student initStudentsFile(Student students[]) {
     unsigned short int i;
     
     for(i = 0; i < STD_MAX; i++){
@@ -46,7 +61,7 @@ Student createStudentsFile(Student students[]) {
     
     FILE *pStudents = fopen("students","w");
     if(pStudents == (FILE *) NULL){
-        printf("Falha ao criar ficheiro");
+        printf("Failed to create file");
     }else{
         frtn = fwrite(students, sizeof(Student), STD_MAX, pStudents);
     }
@@ -69,9 +84,6 @@ Student readStudentsFile(Student students[]) {
         }
     }else{
         fread(students, sizeof(Student), STD_MAX, pStudents);
-        for(i=0; i < STD_MAX; i++){
-            printf("%d: %s", i, students[i].id);
-        }
         fclose(pStudents);
     }
     
@@ -103,10 +115,10 @@ Student insertStudent(Student students[], int studentnr) {
     scanf("%hu", &students[studentnr].person.date.tm_year);
     clear_input();
     puts("Category: (A, B, C ou D): ");
-    scanf("%c", &students[studentnr].person.category)
+    scanf("%c", &students[studentnr].person.category);
     clear_input();
     puts("Revalidate license?(y ou n): ");
-    //:TODO: 
+    scanf("%c", &students[studentnr].licenserev);
     puts("Student successfully added.");
     
     return students[studentnr];
