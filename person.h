@@ -18,8 +18,9 @@
 
 
 //:TODO: Passar "unsigned" para "char" (vectores)
+//:TODO: postalcode (como inserir "-" "traçinho")
 typedef struct {
-    char localnr[4], streetnr;
+    char localnr[4], streetnr[3];
 } PostalCode;
 
 typedef struct {

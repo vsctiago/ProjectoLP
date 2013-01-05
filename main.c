@@ -17,6 +17,8 @@
 #define STD_MAX 10
 #define INST_MAX 10
 
+const char EMPTY_STRING[] = "\0";
+
 /*
  * 
  */
@@ -39,8 +41,13 @@ Instructor insertInstructor(Instructor Instructors[], int Instructornr){
 
 // submenu "Gerir dados do Instrutor"
 
-void initStudentsFile(){
+Student initStudentsFile(Student students[]){
+    unsigned short int i;
     
+    for(i = 0; i < STD_MAX; i++){
+        strcpy(students[i++].id, EMPTY_STRING);
+    }
+    return students[STD_MAX];
 }
 
 void createStudentsFile(Student students[]) {
@@ -51,7 +58,8 @@ void createStudentsFile(Student students[]) {
         printf("Falha ao criar ficheiro");
     }else{
         frtn = fwrite(students, sizeof(Student), STD_MAX, pStudents);
-    } return students[STD_MAX];
+    }
+    return students[STD_MAX];
 }
 
 void studentsFile(Student students[]) {
@@ -61,27 +69,30 @@ void studentsFile(Student students[]) {
     if (pStudents == (FILE *) NULL){
         puts("Ficheiro nao existente.");
         puts("A criar ficheiro...");
-        createStudentsFile();
-        initStudentsFile();
+        createStudentsFile(students);
+        students[STD_MAX] = initStudentsFile(students);
         studentsFile();
     }else{
         fread(students, sizeof(Student), STD_MAX, pStudents);
         fclose(pStudents);
     }
+    
+    return students[STD_MAX];
 }
 
 int main(void) {
 
     Student students[STD_MAX];
-    int choice, choice_students, i, studentnr = 0;
+    int option, choice_students, i, studentnr = 0;
 
 
     do {
-        choice = menu();
-        switch (choice) {
+        option = menu();
+        switch (option) {
             case 1:
                 do {
                     choice_students = studentMenu();
+                    students[STD_MAX] = studentsFile(students);
                     switch (choice_students) {
                         case 1:
                             puts("Selecionada opcao 1 - Adicionar dados");

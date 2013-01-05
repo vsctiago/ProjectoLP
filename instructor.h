@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "person.h"
+#include "utilities.h"
 
 typedef struct {
     unsigned short int licensenr;

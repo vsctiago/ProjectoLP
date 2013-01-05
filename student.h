@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "person.h"
 #include "utilities.h"
+#define ID_LENGTH 8
 
 //:TODO: Validacoes e restricoes
 typedef enum {
@@ -19,16 +20,16 @@ typedef enum {
 } LicenseRev;
 
 typedef struct {
-    unsigned long int id;
+    char id[ID_LENGTH];
     Person person;
     LicenseRev licenserev;
 } Student;
 
-//:DUVIDA: Preciso de por outro define aqui?
+//:TODO: Must do validations for licenserev
 
 Student insertStudent(Student Students[], int studentnr) {
     puts("Inserir numero de identificacao: ");
-    scanf("%lu", &Students[studentnr].id);
+    scanf("%c", &Students[studentnr].id);
     clear_input();
     puts("Escrever nome completo: ");
     fgets(Students[studentnr].person.name, NAME_LENGTH, stdin);
@@ -38,7 +39,7 @@ Student insertStudent(Student Students[], int studentnr) {
     scanf("%hu", &Students[studentnr].person.address.number);
     clear_input();
     puts("Inserir codigo postal: ");
-    scanf("%hu - %hu", &Students[studentnr].person.address.postalcode.localnr, &Students[studentnr].person.address.postalcode.streetnr);
+    scanf("%c - %c", &Students[studentnr].person.address.postalcode.localnr, &Students[studentnr].person.address.postalcode.streetnr);
     clear_input();
     puts("Escrever a localidade onde habita: ");
     fgets(Students[studentnr].person.address.city, CITY_LENGTH, stdin);
@@ -51,6 +52,7 @@ Student insertStudent(Student Students[], int studentnr) {
     scanf("%hu", &Students[studentnr].person.date.tm_year);
     clear_input();
     puts("Introduzir a categoria de conducao na qual se esta a inscrever (A, B, C ou D): ");
+    //:TODO: Chance this code to the standard we learned
     int Category = (intptr_t) & Students[studentnr].person.category;
     scanf("%d", &Category);
     clear_input();
