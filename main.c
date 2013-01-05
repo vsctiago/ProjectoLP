@@ -11,6 +11,7 @@
 #include "person.h"
 #include "student.h"
 #include "instructor.h"
+#include "utilities.h"
 #define SCALE 50
 #define CITYSIZE 20
 #define STD_MAX 10
@@ -42,16 +43,27 @@ void initStudentsFile(){
     
 }
 
-void students_file(Student students[]) {
+void createStudentsFile(Student students[]) {
+    int frtn;
+    
+    FILE *pStudents = fopen("students","w");
+    if(pStudents == (FILE *) NULL){
+        frtn = fwrite(students, sizeof(Student), STD_MAX, pStudents);
+    }
+}
+
+void studentsFile(Student students[]) {
     int frtn;
     
     FILE *pStudents = fopen("students","r");
     if (pStudents == (FILE *) NULL){
         puts("Ficheiro nao existente.");
         puts("A criar ficheiro...");
-        
+        createStudentsFile();
+        initStudentsFile();
+        studentsFile();
     }else{
-        frtn = fwrite(students, sizeof(Student), INST_MAX, pStudents);
+        fread(students, sizeof(Student), STD_MAX, pStudents);
         fclose(pStudents);
     }
 }
