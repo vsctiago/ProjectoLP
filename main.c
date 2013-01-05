@@ -48,8 +48,10 @@ void createStudentsFile(Student students[]) {
     
     FILE *pStudents = fopen("students","w");
     if(pStudents == (FILE *) NULL){
+        printf("Falha ao criar ficheiro");
+    }else{
         frtn = fwrite(students, sizeof(Student), STD_MAX, pStudents);
-    }
+    } return students[STD_MAX];
 }
 
 void studentsFile(Student students[]) {
