@@ -91,35 +91,35 @@ Student readStudentsFile(Student students[]) {
 }
 
 Student insertStudent(Student students[], int studentnr) {
-    puts("ID: ");
+    printf("ID: %c", NEWLINE);
     fgets(students[studentnr].id, ID_LENGTH, stdin);
     clear_input();
-    puts("Full name: ");
+    printf("Full name: %c", NEWLINE);
     fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
-    puts("Street: ");
+    printf("Street: %c", NEWLINE);
     fgets(students[studentnr].person.address.street, NAME_LENGTH, stdin);
-    puts("Door number: ");
+    printf("Door number: %c", NEWLINE);
     fgets(students[studentnr].person.address.number, DOOR_NR, stdin);
     clear_input();
-    puts("Postalcode: ");
+    printf("Postalcode: %c", NEWLINE);
     fgets(students[studentnr].person.address.postalcode.postalcode, POSTALCODE, stdin);
     clear_input();
-    puts("City: ");
+    printf("City: %c", NEWLINE);
     fgets(students[studentnr].person.address.city, CITY_LENGTH, stdin);
-    puts("Phonenumber: ");
+    printf("Phonenumber: %c", NEWLINE);
     scanf("%lu", &students[studentnr].person.phonenr);
     clear_input();
-    puts("Birthday: (dia-mes-ano): ");
+    printf("Birthday: (dia-mes-ano): %c", NEWLINE);
     scanf("%hu", &students[studentnr].person.date.tm_mday);
     scanf("%hu", &students[studentnr].person.date.tm_mon);
     scanf("%hu", &students[studentnr].person.date.tm_year);
     clear_input();
-    puts("Category: (A, B, C ou D): ");
+    printf("Category: (A, B, C ou D): %c", NEWLINE);
     scanf("%c", &students[studentnr].person.category);
     clear_input();
-    puts("Revalidate license?(y ou n): ");
+    printf("Revalidate license?(y ou n): %c", NEWLINE);
     scanf("%c", &students[studentnr].licenserev);
-    puts("Student successfully added.");
+    printf("Student successfully added.%c", NEWLINE);
     
     return students[studentnr];
 }
