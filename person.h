@@ -45,11 +45,6 @@ typedef struct {
     Category category;
 } Person;
 
-
-
-
-
-//:TODO: Validacoes e restricoes
 Person getCat(Person person) {
     char cat;
     Bool v = FALSE;

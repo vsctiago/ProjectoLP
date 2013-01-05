@@ -12,6 +12,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define NEWLINE "\n"
+
 typedef enum {
     FALSE, TRUE
 } Bool;
