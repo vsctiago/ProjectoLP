@@ -49,6 +49,12 @@ typedef struct {
     Category category;
 } Person;
 
+Person getName(Person person) {
+    
+    printf("Full name: ");
+    fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
+}
+
 Person getCat(Person person) {
     char cat;
     Bool v = FALSE;

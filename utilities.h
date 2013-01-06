@@ -18,6 +18,20 @@ typedef enum {
     FALSE, TRUE
 } Bool;
 
+unsigned char fgetsUpd(char * const frase, const unsigned int tamanho) {
+    unsigned int sTam;
+
+    if (fgets(frase, tamanho, stdin) != NULL) {    
+        sTam = strlen(frase) - 1;
+        if (frase[sTam] == '\n') {
+            frase[sTam] = '\0';
+            return 1;
+        } else {
+            return (EXIT_SUCCESS);
+        }
+    }
+}
+
 void clearInput() {
     char ch;
     while ((ch = getchar()) != '\n' && ch != EOF);
