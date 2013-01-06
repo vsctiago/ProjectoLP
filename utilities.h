@@ -18,17 +18,18 @@ typedef enum {
     FALSE, TRUE
 } Bool;
 
-unsigned char fgetsUpd(char * const sentence, const unsigned int size) {
+Bool fgetsUpd(char * const sentence, const unsigned int size) {
     unsigned int sSiz;
 
     if (fgets(sentence, size, stdin) != NULL) {    
         sSiz = strlen(sentence) - 1;
-        if (sentence[sSiz] == '\n') {
+        if (sentence[sSiz] == NEWLINE) {
             sentence[sSiz] = '\0';
-            return 1;
         } else {
-            return (EXIT_SUCCESS);
+            return TRUE;
         }
+    }else {
+        return FALSE;
     }
 }
 
