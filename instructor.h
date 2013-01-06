@@ -93,7 +93,7 @@ Instructor insertInstructor(Instructor instructor[], int instructornr){
     fgets(instructor[instructornr].person.address.number, DOOR_NR, stdin);
     clearInput();
     printf("Postalcode: ");
-    fgets(instructor[instructornr].person.address.postalcode.postalcode, POSTALCODE, stdin);
+    fgets(instructor[instructornr].person.address.postalcode, POSTALCODE, stdin);
     clearInput();
     printf("City: ");
     fgets(instructor[instructornr].person.address.city, CITY_LENGTH, stdin);
