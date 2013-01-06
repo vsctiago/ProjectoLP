@@ -55,7 +55,7 @@ int menu() {
         printf("\t\t   |-------------------------------|\n");
         printf("\t\t   |    1-Manage Student Data      |\n");
         printf("\t\t   |    2-Manage Instructor Data   |\n");
-        printf("\t\t   |    3-Manage Markings Lessons  |\n");
+        printf("\t\t   |    3-Manage Lessons  |\n");
         printf("\t\t   |    4-Exit                     |\n");
         printf("\t\t   |-------------------------------|\n");
         printf("Select an option: ");

@@ -24,9 +24,7 @@ int main() {
 
     do {
         option = menu();
-    } while (option != 4) {
-        
-    }
-    
+    } while (option != 4);
+    printf("Program closed.");
     return(EXIT_SUCCESS);
 }

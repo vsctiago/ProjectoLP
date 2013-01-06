@@ -134,6 +134,19 @@ Student insertStudent(Student students[], int studentnr) {
     return students[studentnr];
 }
 
+
+void modifyStudent(Student students[], int studentnr) {
+    
+}
+
+void removeStudent(Student students[], int studentnr) {
+    
+}
+
+void listStudent() {
+
+}
+
 int studentModifyMenu(Student students[]) {
     int option;
 
@@ -171,11 +184,11 @@ int studentMenu(Student students[], int studentnr) {
         scanf("%d", &option);
     } while (option > 5 || option < 1);
     if (option == 1) {
-        printf("Search for: ");
-        scanf("%u", &sn);
         pos = searchStudent(students, sn);
         insertStudent(students, pos);
     } else if (option == 2) {
+        printf("Search for: ");
+        scanf("%u", &sn);
         studentModifyMenu(students);
     } else if (option == 3) {
         
@@ -186,19 +199,6 @@ int studentMenu(Student students[], int studentnr) {
     }
     return option;
 }
-
-void modifyStudent(Student students[], int studentnr) {
-    
-}
-
-void removeStudent(Student students[], int studentnr) {
-    
-}
-
-void listStudent() {
-
-}
-
 
 #ifdef	__cplusplus
 extern "C" {

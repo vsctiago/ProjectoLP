@@ -15,7 +15,7 @@
 #define CAT_LENGTH 1
 #define LR_LENGTH 1
 
-const unsigned short int initINST = 9999;
+const unsigned short int initINST = 10000;
 
 typedef struct {
     unsigned short int licensenr;
