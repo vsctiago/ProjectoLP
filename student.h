@@ -121,22 +121,17 @@ int searchStudent(Student students[], unsigned int sn) {
         }
 }
 
-int studentMenu() {
-    int option;
-
-    do {
-        printf("\t\t\t* Manage Student Data *\n\n");
-        printf("\t\t\t   |------------------|\n");
-        printf("\t\t\t   |     1-Add        |\n");
-        printf("\t\t\t   |     2-Modify     |\n");
-        printf("\t\t\t   |     3-List       |\n");
-        printf("\t\t\t   |     4-Remove     |\n");
-        printf("\t\t\t   |     5-Back       |\n");
-        printf("\t\t\t   |------------------|\n");
-        printf("Select an option: ");
-        scanf("%d", &option);
-    } while (option > 5 || option < 1);
-    return option;
+Student insertStudent(Student students[], int studentnr) {
+    students[studentnr] = getId(students[studentnr]);
+    students[studentnr].person = getName(students[studentnr].person);
+    students[studentnr].person = getAddress(students[studentnr].person);
+    students[studentnr].person = getPhone(students[studentnr].person);
+    students[studentnr].person = getBirthday(students[studentnr].person);
+    students[studentnr].person = getCat(students[studentnr].person);
+    students[studentnr] = getLicenseRev(students[studentnr]);
+    printf("Student successfully added.%c", NEWLINE);
+    
+    return students[studentnr];
 }
 
 int studentModifyMenu() {
@@ -154,21 +149,37 @@ int studentModifyMenu() {
         printf("\t\t\t   |------------------|\n");
         printf("Select an option: ");
         scanf("%d", &option);
-    } while (option > 5 || option < 1);
+    } while (option > 6 || option < 1);
     return option;
 }
 
-Student insertStudent(Student students[], int studentnr) {
-    students[studentnr] = getId(students[studentnr]);
-    students[studentnr].person = getName(students[studentnr].person);
-    students[studentnr].person = getAddress(students[studentnr].person);
-    students[studentnr].person = getPhone(students[studentnr].person);
-    students[studentnr].person = getBirthday(students[studentnr].person);
-    students[studentnr].person = getCat(students[studentnr].person);
-    students[studentnr] = getLicenseRev(students[studentnr]);
-    printf("Student successfully added.%c", NEWLINE);
-    
-    return students[studentnr];
+int studentMenu(Student students[], int studentnr) {
+    int option;
+
+    do {
+        printf("\t\t\t* Manage Student Data *\n\n");
+        printf("\t\t\t   |------------------|\n");
+        printf("\t\t\t   |     1-Add        |\n");
+        printf("\t\t\t   |     2-Modify     |\n");
+        printf("\t\t\t   |     3-List       |\n");
+        printf("\t\t\t   |     4-Remove     |\n");
+        printf("\t\t\t   |     5-Back       |\n");
+        printf("\t\t\t   |------------------|\n");
+        printf("Select an option: ");
+        scanf("%d", &option);
+    } while (option > 5 || option < 1);
+    if (option == 1) {
+        insertStudent(students, studentnr);
+    } else if (option == 2) {
+        studentModifyMenu();
+    } else if (option == 3) {
+        
+    } else if (option == 4) {
+        
+    } else if (option == 5) {
+        
+    }
+    return option;
 }
 
 void modifyStudent(Student students[], int studentnr) {

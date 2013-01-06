@@ -20,7 +20,7 @@
 int main() {
 
     Student students[STD_MAX];
-    int option, stdopt, i, studentnr = 0;
+    int option, stdopt, stdmopt, i, studentnr = 0;
 
 
     do {
@@ -28,14 +28,13 @@ int main() {
         switch (option) {
             case 1:
                 do {
-                    stdopt = studentMenu();
                     students[STD_MAX] = readStudentsFile(students);
                     switch (stdopt) {
                         case 1:
                             insertStudent(students, studentnr);
                             break;
                         case 2:
-                            
+                            studentModifyMenu();
                             break;
                         case 3:
                             printf("List of students: ");
