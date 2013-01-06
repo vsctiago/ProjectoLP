@@ -85,6 +85,17 @@ Person getPhone(Person person) {
     return person;
 }
 
+Person getBirthday(Person person) {
+    Bool v = FALSE;
+    
+    printf("Birthday: ");
+    scanf("%d", person.date.tm_mday);
+    scanf("%d", person.date.tm_mon);
+    scanf("%d", person.date.tm_year);
+    printf("%c", NEWLINE);
+    return person;
+}
+
 Person getCat(Person person) {
     char cat;
     Bool v = FALSE;
