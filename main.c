@@ -22,8 +22,11 @@ int main() {
     Student students[STD_MAX];
     int option, stdopt, stdmopt, i, studentnr = 0;
 
-    menu();
-    
+    do {
+        option = menu();
+    } while (option != 4) {
+        
+    }
     
     return(EXIT_SUCCESS);
 }
