@@ -32,6 +32,7 @@ typedef struct {
 Student getId(Student student) {
     Bool v = FALSE;
     
+    clearInput();
     printf("ID: ");
     fgetsUpd(student.id, ID_LENGTH);
     printf("%c", NEWLINE);
