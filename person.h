@@ -60,10 +60,8 @@ Person getAddress(Person person) {
     printf("%c", NEWLINE);
     printf("Street: ");
     fgetsUpd(person.address.street, STREET_LENGTH);
-    printf("%c", NEWLINE);
     printf("Door number: ");
     fgetsUpd(person.address.number, DOOR_NR);
-    printf("%c", NEWLINE);
     printf("PostalCode: ");
     fgetsUpd(person.address.postalcode, POSTALCODE);
     printf("%c", NEWLINE);

@@ -35,7 +35,6 @@ Student getId(Student student) {
     clearInput();
     printf("ID: ");
     fgetsUpd(student.id, ID_LENGTH);
-    printf("%c", NEWLINE);
     return student;
 }
 
@@ -126,7 +125,7 @@ int studentMenu() {
         printf("\t\t\t   |     3-List       |\n");
         printf("\t\t\t   |     4-Remove     |\n");
         printf("\t\t\t   |     5-Back       |\n");
-        printf("\t\t\t   |------------------|\n\n\n");
+        printf("\t\t\t   |------------------|\n");
         printf("Select an option: ");
         scanf("%d", &option);
     } while (option > 5 || option < 1);

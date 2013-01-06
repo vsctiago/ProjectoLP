@@ -56,7 +56,7 @@ int menu() {
         printf("\t\t   |    2-Manage Instructor Data   |\n");
         printf("\t\t   |    3-Manage Markings Lessons  |\n");
         printf("\t\t   |    4-Exit                     |\n");
-        printf("\t\t   |-------------------------------|\n\n\n");
+        printf("\t\t   |-------------------------------|\n");
         printf("Select an option: ");
         scanf("%d", &option);
     } while (option > 4 || option < 1);
