@@ -19,12 +19,12 @@ typedef enum {
 } Bool;
 
 unsigned char fgetsUpd(char * const sentence, const unsigned int size) {
-    unsigned int sTam;
+    unsigned int sSiz;
 
     if (fgets(sentence, size, stdin) != NULL) {    
-        sTam = strlen(sentence) - 1;
-        if (sentence[sTam] == '\n') {
-            sentence[sTam] = '\0';
+        sSiz = strlen(sentence) - 1;
+        if (sentence[sSiz] == '\n') {
+            sentence[sSiz] = '\0';
             return 1;
         } else {
             return (EXIT_SUCCESS);
