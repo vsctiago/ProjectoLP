@@ -21,7 +21,7 @@ typedef enum {
     y = 'y', n = 'n'
 } LicenseRev;
 
-//:TODO: VALIDATE ID = 8 NUMBERS -- init= 99999999
+//:TODO: VALIDATE ID = 8 NUMBERS -- init= 100000000 (9numbers)
 
 typedef struct {
     unsigned char id[ID_LENGTH];
@@ -181,7 +181,7 @@ int studentModifyMenu(Student students[]) {
 }
 
 int studentMenu(Student students[], int studentnr) {
-    int option, pos;
+    int option, pos, i;
     unsigned int sn;
 
     students[STD_MAX] = readStudentsFile(students);
@@ -200,13 +200,19 @@ int studentMenu(Student students[], int studentnr) {
     if (option == 1) {
         pos = searchStudent(students, sn);
         insertStudent(students, pos);
+        writeStudentsFile(students);
     } else if (option == 2) {
         printf("Search for: ");
         scanf("%u", &sn);
         
         studentModifyMenu(students);
     } else if (option == 3) {
-        
+        printf("List of students:");
+        printf("%c", NEWLINE);
+        for(i = 0; i < STD_MAX; i++) {
+            printf("%d - %lu", i, students[i].id);
+            printf("%c", NEWLINE);
+        }
     } else if (option == 4) {
         
     } else if (option == 5) {
