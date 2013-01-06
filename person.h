@@ -52,7 +52,12 @@ typedef struct {
 Person getName(Person person) {
     
     printf("Full name: ");
-    fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
+    fgetsUpd(person.name, NAME_LENGTH);
+    return person;
+}
+
+Person getAddress(Person person) {
+    
 }
 
 Person getCat(Person person) {
