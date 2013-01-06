@@ -103,6 +103,24 @@ int searchStudent(Student students[], unsigned int sn) {
         }
 }
 
+int studentMenu() {
+    int option;
+
+    do {
+        printf("\t\t\t* Manage Student Data *\n\n");
+        printf("\t\t\t   |------------------|\n");
+        printf("\t\t\t   |     1-Add        |\n");
+        printf("\t\t\t   |     2-Modify     |\n");
+        printf("\t\t\t   |     3-List       |\n");
+        printf("\t\t\t   |     4-Remove     |\n");
+        printf("\t\t\t   |     5-Back       |\n");
+        printf("\t\t\t   |------------------|\n\n\n");
+        printf("Select an option: ");
+        scanf("%d", &option);
+    } while (option > 5 || option < 1);
+    return option;
+}
+
 Student insertStudent(Student students[], int studentnr) {
     printf("ID: ");
     fgets(students[studentnr].id, ID_LENGTH, stdin);
@@ -145,26 +163,6 @@ void listar_aluno() {
 
 }
 
-int studentMenu() {
-
-    int stdopt;
-
-    do {
-        printf("\t\t\t* Gerir dados do Aluno *\n\n");
-        printf("Por Favor, escolha uma das seguintes opcoes digitanto o numero correspondente \n\n\n");
-        printf("                        |------------------|\n");
-        printf("                        |1-Adicionar dados |\n");
-        printf("                        |2-Alterar dados   |\n");
-        printf("                        |3-Listar dados    |\n");
-        printf("                        |4-Remover dados   |\n");
-        printf("                        |5-Voltar          |\n");
-        printf("                        |------------------|\n\n");
-        printf("\nEscolha uma opcao: ");
-        scanf("%d", &stdopt);
-    } while (stdopt > 5 || stdopt < 1);
-
-    return stdopt;
-}
 
 #ifdef	__cplusplus
 extern "C" {
