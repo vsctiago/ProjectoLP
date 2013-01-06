@@ -25,14 +25,11 @@ const char EMPTY_STRING[] = "\0";
 typedef struct tm Date;
 
 //:TODO: Passar "unsigned" para "char" (vectores)
-typedef struct {
-    unsigned char postalcode[POSTALCODE];
-} PostalCode;
 
 typedef struct {
     unsigned char street[STREET_LENGTH];
     unsigned char number[DOOR_NR];
-    PostalCode postalcode;
+    unsigned char postalcode[POSTALCODE];
     unsigned char city[CITY_LENGTH];
 } Address;
 
