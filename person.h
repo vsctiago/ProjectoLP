@@ -62,12 +62,11 @@ Person getAddress(Person person) {
     fgetsUpd(person.address.street, STREET_LENGTH);
     printf("Door number: ");
     fgetsUpd(person.address.number, DOOR_NR);
+    clearInput();
     printf("PostalCode: ");
     fgetsUpd(person.address.postalcode, POSTALCODE);
-    printf("%c", NEWLINE);
     printf("City: ");
     fgetsUpd(person.address.city, CITY_LENGTH);
-    printf("%c", NEWLINE);
     return person;
 }
 
@@ -76,7 +75,6 @@ Person getPhone(Person person) {
     
     printf("Phone number: ");
     fgetsUpd(person.phonenr, PHONE_LENGTH);
-    printf("%c", NEWLINE);
     return person;
 }
 
@@ -85,9 +83,10 @@ Person getBirthday(Person person) {
     
     printf("Birthday: ");
     scanf("%d", person.date.tm_mday);
+    clearInput();
     scanf("%d", person.date.tm_mon);
+    clearInput();
     scanf("%d", person.date.tm_year);
-    printf("%c", NEWLINE);
     return person;
 }
 
@@ -96,9 +95,9 @@ Person getCat(Person person) {
     Bool v = FALSE;
     
     do {
+        clearInput();
         printf("Category: (A, B, C ou D): ");
         scanf("%c", &cat);
-        printf("%c", NEWLINE);
         if(cat == 'a' || cat == 'A') {
             person.category = A;
             v = TRUE;
@@ -112,10 +111,11 @@ Person getCat(Person person) {
             person.category = D;
             v = TRUE;
         } else {
-            puts("Invalid input.");
-            puts("Insert a valid category!");
+            printf("Invalid input.");
+            printf("%c", NEWLINE);
+            printf("Insert a valid category!");
+            printf("%c", NEWLINE);
             v = FALSE;
-            
         }
     } while (v == FALSE);
     return person;

@@ -43,17 +43,24 @@ Student getLicenseRev(Student student) {
     Bool v = FALSE;
     
     do {
+        clearInput();
         printf("Revalidate license?(y or n): ");
-        scanf("%c", &student.licenserev);
+        scanf("%c", &lr);
         if (lr == 'y' || lr == 'Y') {
             student.licenserev = y;
             v = TRUE;
-        }else if (lr == 'n' || lr == 'N') { 
+        } else if (lr == 'n' || lr == 'N') { 
             student.licenserev = n;
             v = TRUE;
+        } else {
+            printf("Invalid input.");
+            printf("%c", NEWLINE);
+            printf("Insert a valid category!");
+            printf("%c", NEWLINE);
+            v = FALSE;
         }
     } while (v = FALSE);
-        return student;
+    return student;
 } 
 
 //:TODO: Must do validations for licenserev
