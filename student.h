@@ -59,7 +59,7 @@ Student getLicenseRev(Student student) {
             printf("%c", NEWLINE);
             v = FALSE;
         }
-    } while (v = FALSE);
+    } while (v == FALSE);
     return student;
 } 
 
