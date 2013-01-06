@@ -48,7 +48,8 @@ void doClear(void) {
 
 int menu() {
     int option;
-
+    Bool v = FALSE;
+    
     do {
         printf("\t\t   * Welcome to the program agency *\n\n");
         printf("\t\t   |-------------------------------|\n");
@@ -60,6 +61,11 @@ int menu() {
         printf("Select an option: ");
         scanf("%d", &option);
     } while (option > 4 || option < 1);
+    if (option == 1) {
+        studentMenu();
+    } else if (option == 4) {
+        v = TRUE;
+    }
     return option;
 }
 

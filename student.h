@@ -134,7 +134,7 @@ Student insertStudent(Student students[], int studentnr) {
     return students[studentnr];
 }
 
-int studentModifyMenu() {
+int studentModifyMenu(Student students[]) {
     int option;
 
     do {
@@ -154,8 +154,10 @@ int studentModifyMenu() {
 }
 
 int studentMenu(Student students[], int studentnr) {
-    int option;
+    int option, pos;
+    unsigned int sn;
 
+    students[STD_MAX] = readStudentsFile(students);
     do {
         printf("\t\t\t* Manage Student Data *\n\n");
         printf("\t\t\t   |------------------|\n");
@@ -169,9 +171,12 @@ int studentMenu(Student students[], int studentnr) {
         scanf("%d", &option);
     } while (option > 5 || option < 1);
     if (option == 1) {
-        insertStudent(students, studentnr);
+        printf("Search for: ");
+        scanf("%u", &sn);
+        pos = searchStudent(students, sn);
+        insertStudent(students, pos);
     } else if (option == 2) {
-        studentModifyMenu();
+        studentModifyMenu(students);
     } else if (option == 3) {
         
     } else if (option == 4) {
