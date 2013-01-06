@@ -128,7 +128,7 @@ Student insertStudent(Student students[], int studentnr) {
     printf("Full name: ");
     fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
     printf("Street: ");
-    fgets(students[studentnr].person.address.street, NAME_LENGTH, stdin);
+    fgets(students[studentnr].person.address.street, STREET_LENGTH, stdin);
     printf("Door number: ");
     fgets(students[studentnr].person.address.number, DOOR_NR, stdin);
     clearInput();

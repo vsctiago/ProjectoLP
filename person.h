@@ -57,8 +57,26 @@ Person getName(Person person) {
 }
 
 Person getAddress(Person person) {
+    Bool v = FALSE;
     
+    printf("*Address*");
+    printf("%c", NEWLINE);
+    printf("Street: ");
+    fgetsUpd(person.address.street, STREET_LENGTH);
+    printf("%c", NEWLINE);
+    printf("Door number: ");
+    fgetsUpd(person.address.number, DOOR_NR);
+    printf("%c", NEWLINE);
+    printf("PostalCode: ");
+    fgetsUpd(person.address.postalcode, POSTALCODE);
+    printf("%c", NEWLINE);
+    printf("City: ");
+    fgetsUpd(person.address.city, CITY_LENGTH);
+    printf("%c", NEWLINE);
+    return person;
 }
+
+
 
 Person getCat(Person person) {
     char cat;
