@@ -121,6 +121,20 @@ int searchStudent(Student students[], unsigned int sn) {
         }
 }
 
+void writeStudentsFile(Student students[]) {
+    int stdnr;
+    
+    FILE *pStudents = fopen("students","w");
+    
+    if(pStudents == (FILE*) NULL) {
+        printf("Couldn't open file.");
+        printf("%c", NEWLINE);
+    } else {
+        stdnr = fwrite(students, sizeof(Student), STD_MAX, pStudents);
+        fclose(pStudents);
+    }
+}
+
 Student insertStudent(Student students[], int studentnr) {
     students[studentnr] = getId(students[studentnr]);
     students[studentnr].person = getName(students[studentnr].person);
@@ -189,6 +203,7 @@ int studentMenu(Student students[], int studentnr) {
     } else if (option == 2) {
         printf("Search for: ");
         scanf("%u", &sn);
+        
         studentModifyMenu(students);
     } else if (option == 3) {
         

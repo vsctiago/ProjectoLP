@@ -20,7 +20,7 @@
 int main() {
 
     Student students[STD_MAX];
-    int option, stdopt, stdmopt, i, studentnr = 0;
+    int option, stdopt, stdmopt, studentnr = 0;
 
     do {
         option = menu();
