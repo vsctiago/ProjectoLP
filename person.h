@@ -76,7 +76,14 @@ Person getAddress(Person person) {
     return person;
 }
 
-
+Person getPhone(Person person) {
+    Bool v = FALSE;
+    
+    printf("Phone number: ");
+    fgetsUpd(person.phonenr, PHONE_LENGTH);
+    printf("%c", NEWLINE);
+    return person;
+}
 
 Person getCat(Person person) {
     char cat;
