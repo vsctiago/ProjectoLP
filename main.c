@@ -29,6 +29,7 @@ int main() {
             case 1:
                 do {
                     students[STD_MAX] = readStudentsFile(students);
+                    stdopt = studentMenu(students, studentnr);
                     switch (stdopt) {
                         case 1:
                             insertStudent(students, studentnr);

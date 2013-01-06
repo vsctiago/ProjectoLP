@@ -154,7 +154,7 @@ int studentModifyMenu() {
 }
 
 int studentMenu(Student students[], int studentnr) {
-    int option;
+    int stdopt;
 
     do {
         printf("\t\t\t* Manage Student Data *\n\n");
@@ -166,20 +166,20 @@ int studentMenu(Student students[], int studentnr) {
         printf("\t\t\t   |     5-Back       |\n");
         printf("\t\t\t   |------------------|\n");
         printf("Select an option: ");
-        scanf("%d", &option);
-    } while (option > 5 || option < 1);
-    if (option == 1) {
+        scanf("%d", &stdopt);
+    } while (stdopt > 5 || stdopt < 1);
+    if (stdopt == 1) {
         insertStudent(students, studentnr);
-    } else if (option == 2) {
+    } else if (stdopt == 2) {
         studentModifyMenu();
-    } else if (option == 3) {
+    } else if (stdopt == 3) {
         
-    } else if (option == 4) {
+    } else if (stdopt == 4) {
         
-    } else if (option == 5) {
+    } else if (stdopt == 5) {
         
     }
-    return option;
+    return stdopt;
 }
 
 void modifyStudent(Student students[], int studentnr) {
