@@ -32,24 +32,19 @@ void doclear(void) {
 }
 
 int menu() {
-
     int option;
 
     do {
-        printf("* Agenda eletronica *\n\n");
-        printf("-- Bem vindo ao programa de agenciamento --\n \n \n ");
-        printf("            ---------------------//---------------------\n\n");
-        printf("Por Favor, escolha uma das seguintes opcoes digitanto o numero correspondente \n \n \n");
-        printf("                        |-----------------------------|\n");
-        printf("                        |1-Gerir dados do Aluno       |\n");
-        printf("                        |2-Gerir dados do Instrutor   |\n");
-        printf("                        |3-Gerir marcacoes das aulas  |\n");
-        printf("                        |4-Sair                       |\n");
-        printf("                        |-----------------------------|\n\n");
-        printf("\nEscolha uma opcao: ");
+        printf("\t\t   * Welcome to the program agency *\n\n");
+        printf("\t\t   |-------------------------------|\n");
+        printf("\t\t   |    1-Manage Student Data      |\n");
+        printf("\t\t   |    2-Manage Instructor Data   |\n");
+        printf("\t\t   |    3-Manage Markings Lessons  |\n");
+        printf("\t\t   |    4-Exit                     |\n");
+        printf("\t\t   |-------------------------------|\n\n\n");
+        printf("Select an option: ");
         scanf("%d", &option);
     } while (option > 4 || option < 1);
-
     return option;
 }
 
