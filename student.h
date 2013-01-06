@@ -90,15 +90,17 @@ Student readStudentsFile(Student students[]) {
     return students[STD_MAX];
 }
 
-int searchStudent(Student students[], unsigned int sn){
-    int pos = 0, studentnr;
+int searchStudent(Student students[], unsigned int sn) {
+    int pos = 0;
     
     while ((pos < STD_MAX) && (sn != students[pos].id)) {
-        if (studentnr == sn) {
-            
-        }
+        pos++;
     }
-    return studentnr;
+    if (pos != STD_MAX) {
+        return pos;
+        }else{
+        return EOF;
+        }
 }
 
 Student insertStudent(Student students[], int studentnr) {

@@ -69,15 +69,17 @@ Instructor readInstructorFile(Instructor instructor[]) {
 
 //:TODO: FINISH SEARCHFUNCTION
 
-int searchInstructor(Instructor instructor[], unsigned int in) {
-    int pos = 0, instructornr;
-
-    while ((pos < INST_MAX) && (in != instructor[pos].licensenr)) {
-        if (instructornr == in) {
-
-        }
+int searchInstructor(Instructor instructors[], unsigned int in) {
+    int pos = 0;
+    
+    while ((pos < INST_MAX) && (in != instructors[pos].licensenr)) {
+        pos++;
     }
-    return instructornr;
+    if (pos != INST_MAX) {
+        return pos;
+        }else{
+        return EOF;
+        }
 }
 
 Instructor insertInstructor(Instructor instructor[], int instructornr){
