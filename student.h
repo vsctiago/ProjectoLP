@@ -29,11 +29,22 @@ typedef struct {
     LicenseRev licenserev;
 } Student;
 
+Student getId(Student student) {
+    Bool v = FALSE;
+    
+    printf("ID: ");
+    fgetsUpd(student.id, ID_LENGTH);
+    printf("%c", NEWLINE);
+    return student;
+}
+
 Student getLicenseRev(Student student) {
     char lr;
     Bool v = FALSE;
     
     do {
+        printf("Revalidate license?(y or n): ");
+        scanf("%c", &student.licenserev);
         if (lr == 'y' || lr == 'Y') {
             student.licenserev = y;
             v = TRUE;
@@ -122,34 +133,13 @@ int studentMenu() {
 }
 
 Student insertStudent(Student students[], int studentnr) {
-    printf("ID: ");
-    fgets(students[studentnr].id, ID_LENGTH, stdin);
-    clearInput();
-    printf("Full name: ");
-    fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
-    printf("Street: ");
-    fgets(students[studentnr].person.address.street, STREET_LENGTH, stdin);
-    printf("Door number: ");
-    fgets(students[studentnr].person.address.number, DOOR_NR, stdin);
-    clearInput();
-    printf("Postalcode: ");
-    fgets(students[studentnr].person.address.postalcode.postalcode, POSTALCODE, stdin);
-    clearInput();
-    printf("City: ");
-    fgets(students[studentnr].person.address.city, CITY_LENGTH, stdin);
-    printf("Phonenumber: ");
-    fgets(students[studentnr].person.phonenr, PHONE_LENGTH, stdin);
-    clearInput();
-    printf("Birthday: (dia-mes-ano): ");
-    scanf("%hu", &students[studentnr].person.date.tm_mday);
-    scanf("%hu", &students[studentnr].person.date.tm_mon);
-    scanf("%hu", &students[studentnr].person.date.tm_year);
-    clearInput();
-    printf("Category: (A, B, C ou D): ");
-    getCat(students[studentnr].person);
-    clearInput();
-    printf("Revalidate license?(y ou n): ");
-    scanf("%c", &students[studentnr].licenserev);
+    students[studentnr] = getId(students[studentnr]);
+    students[studentnr].person = getName(students[studentnr].person);
+    students[studentnr].person = getAddress(students[studentnr].person);
+    students[studentnr].person = getPhone(students[studentnr].person);
+    students[studentnr].person = getBirthday(students[studentnr].person);
+    students[studentnr].person = getCat(students[studentnr].person);
+    students[studentnr] = getLicenseRev(students[studentnr]);
     printf("Student successfully added.%c", NEWLINE);
     
     return students[studentnr];

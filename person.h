@@ -101,7 +101,9 @@ Person getCat(Person person) {
     Bool v = FALSE;
     
     do {
+        printf("Category: (A, B, C ou D): ");
         scanf("%c", &cat);
+        printf("%c", NEWLINE);
         if(cat == 'a' || cat == 'A') {
             person.category = A;
             v = TRUE;
