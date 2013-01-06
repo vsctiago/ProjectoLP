@@ -32,15 +32,14 @@ int main() {
                     students[STD_MAX] = readStudentsFile(students);
                     switch (stdopt) {
                         case 1:
-                            puts("Selecionada opcao 1 - Adicionar dados");
                             insertStudent(students, studentnr);
                             break;
                         case 2:
-                            puts("Selecionada opcao 2 - Modificar dados");
+                            
                             break;
                         case 3:
-                            puts("Selecionada opcao 3 - Listar dados");
-                            puts("Alunos inscritos:");
+                            printf("List of students: ");
+                            printf("%c", NEWLINE);
                             for (i = 0; i < STD_MAX; i++) {
                                 printf("%d - %s", i, students[i].person.name);
                             }

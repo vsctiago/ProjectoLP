@@ -139,6 +139,25 @@ int studentMenu() {
     return option;
 }
 
+int studentModifyMenu() {
+    int option;
+
+    do {
+        printf("\t\t\t* Modify Student Data *\n\n");
+        printf("\t\t\t   |------------------|\n");
+        printf("\t\t\t   |     1-Name       |\n");
+        printf("\t\t\t   |     2-Address    |\n");
+        printf("\t\t\t   |     3-Phone      |\n");
+        printf("\t\t\t   |     4-Birthday   |\n");
+        printf("\t\t\t   |     5-Category   |\n");
+        printf("\t\t\t   |     6-LicenseRev |\n");
+        printf("\t\t\t   |------------------|\n");
+        printf("Select an option: ");
+        scanf("%d", &option);
+    } while (option > 5 || option < 1);
+    return option;
+}
+
 Student insertStudent(Student students[], int studentnr) {
     students[studentnr] = getId(students[studentnr]);
     students[studentnr].person = getName(students[studentnr].person);
