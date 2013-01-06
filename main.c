@@ -14,7 +14,6 @@
 #include "utilities.h"
 #define SCALE 50
 #define CITYSIZE 20
-#define INST_MAX 10
 /*
  * 
  */

@@ -12,11 +12,9 @@
 #include <stdlib.h>
 #include "person.h"
 #define ID_LENGTH 8
-#define STD_MAX 10
+#define STD_MAX 20
 #define CAT_LENGTH 1
 #define LR_LENGTH 1
-
-const char EMPTY_STRING[] = "\0";
 
 //:TODO: Validacoes e restricoes
 typedef enum {

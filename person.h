@@ -20,6 +20,8 @@
 #define POSTALCODE 8
 #define PHONE_LENGTH 9
 
+const char EMPTY_STRING[] = "\0";
+
 typedef struct tm Date;
 
 //:TODO: Passar "unsigned" para "char" (vectores)

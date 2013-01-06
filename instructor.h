@@ -11,12 +11,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "person.h"
+#define INST_MAX 10
+#define CAT_LENGTH 1
+#define LR_LENGTH 1
+
+const unsigned short int initINST = 9999;
 
 typedef struct {
     unsigned short int licensenr;
     Person person;
     unsigned short salary;
 } Instructor;
+
+Instructor initInstructorFile(Instructor instructor[]) {
+    unsigned short int i;
+
+    for (i = 0; i < INST_MAX; i++) {
+        instructor[i].licensenr = initINST;
+    }
+    return instructor[INST_MAX];
+}
 
 Instructor insertInstructor(Instructor Instructors[], int Instructornr){
     
