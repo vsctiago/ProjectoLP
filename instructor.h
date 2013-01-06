@@ -119,24 +119,23 @@ Instructor insertInstructor(Instructor instructor[], int instructornr){
 }
 
 int menu_Instrutor() {
-
-    int choice;
+    int option;
 
     do {
         printf("\t\t\t* Manage Instructor Data *\n\n");
-        printf("                        |------------------|\n");
-        printf("                        |1-Add\t|\n");
-        printf("                        |2-Modify\t|\n");
-        printf("                        |3-List\t|\n");
-        printf("                        |4-Remove\t|\n");
-        printf("                        |5-Back\t|\n");
-        printf("                        |------------------|\n\n");
-        printf("\nSelect an option: ");
-        scanf("%d", &choice);
-    } while (choice > 5 || choice < 1);
-
-    return choice;
+        printf("\t\t\t   |------------------|\n");
+        printf("\t\t\t   |     1-Add        |\n");
+        printf("\t\t\t   |     2-Modify     |\n");
+        printf("\t\t\t   |     3-List       |\n");
+        printf("\t\t\t   |     4-Remove     |\n");
+        printf("\t\t\t   |     5-Back       |\n");
+        printf("\t\t\t   |------------------|\n\n\n");
+        printf("Select an option: ");
+        scanf("%d", &option);
+    } while (option > 5 || option < 1);
+    return option;
 }
+
 
 #ifdef	__cplusplus
 extern "C" {

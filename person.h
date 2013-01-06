@@ -54,7 +54,7 @@ Person getCat(Person person) {
     Bool v = FALSE;
     
     do {
-        scanf("%c", &person.category);
+        scanf("%c", &cat);
         if(cat == 'a' || cat == 'A') {
             person.category = A;
             v = TRUE;
