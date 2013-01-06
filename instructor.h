@@ -67,8 +67,6 @@ Instructor readInstructorFile(Instructor instructor[]) {
     return instructor[INST_MAX];
 }
 
-//:TODO: FINISH SEARCHFUNCTION
-
 int searchInstructor(Instructor instructors[], unsigned int in) {
     int pos = 0;
     
@@ -86,30 +84,30 @@ Instructor insertInstructor(Instructor instructor[], int instructornr){
  
     printf("License: ");
     scanf("%lu", instructor[instructornr].licensenr);
-    clear_input();
+    clearInput();
     printf("Full name: ");
     fgets(instructor[instructornr].person.name, NAME_LENGTH, stdin);
     printf("Street: ");
     fgets(instructor[instructornr].person.address.street, NAME_LENGTH, stdin);
     printf("Door number: ");
     fgets(instructor[instructornr].person.address.number, DOOR_NR, stdin);
-    clear_input();
+    clearInput();
     printf("Postalcode: ");
     fgets(instructor[instructornr].person.address.postalcode.postalcode, POSTALCODE, stdin);
-    clear_input();
+    clearInput();
     printf("City: ");
     fgets(instructor[instructornr].person.address.city, CITY_LENGTH, stdin);
     printf("Phonenumber: ");
     fgets(instructor[instructornr].person.phonenr, PHONE_LENGTH, stdin);
-    clear_input();
+    clearInput();
     printf("Birthday: (dia-mes-ano): ");
     scanf("%hu", &instructor[instructornr].person.date.tm_mday);
     scanf("%hu", &instructor[instructornr].person.date.tm_mon);
     scanf("%hu", &instructor[instructornr].person.date.tm_year);
-    clear_input();
+    clearInput();
     printf("Category: (A, B, C ou D): ");
     getCat(instructor[instructornr].person);
-    clear_input();
+    clearInput();
     printf("Salary: ");
     scanf("%lu", instructor[instructornr].salary);
     printf("Instructor successfully added.%c", NEWLINE);
@@ -118,7 +116,7 @@ Instructor insertInstructor(Instructor instructor[], int instructornr){
 
 }
 
-int menu_Instrutor() {
+int menuInstrutor() {
     int option;
 
     do {

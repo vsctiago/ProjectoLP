@@ -124,30 +124,30 @@ int studentMenu() {
 Student insertStudent(Student students[], int studentnr) {
     printf("ID: ");
     fgets(students[studentnr].id, ID_LENGTH, stdin);
-    clear_input();
+    clearInput();
     printf("Full name: ");
     fgets(students[studentnr].person.name, NAME_LENGTH, stdin);
     printf("Street: ");
     fgets(students[studentnr].person.address.street, NAME_LENGTH, stdin);
     printf("Door number: ");
     fgets(students[studentnr].person.address.number, DOOR_NR, stdin);
-    clear_input();
+    clearInput();
     printf("Postalcode: ");
     fgets(students[studentnr].person.address.postalcode.postalcode, POSTALCODE, stdin);
-    clear_input();
+    clearInput();
     printf("City: ");
     fgets(students[studentnr].person.address.city, CITY_LENGTH, stdin);
     printf("Phonenumber: ");
     fgets(students[studentnr].person.phonenr, PHONE_LENGTH, stdin);
-    clear_input();
+    clearInput();
     printf("Birthday: (dia-mes-ano): ");
     scanf("%hu", &students[studentnr].person.date.tm_mday);
     scanf("%hu", &students[studentnr].person.date.tm_mon);
     scanf("%hu", &students[studentnr].person.date.tm_year);
-    clear_input();
+    clearInput();
     printf("Category: (A, B, C ou D): ");
     getCat(students[studentnr].person);
-    clear_input();
+    clearInput();
     printf("Revalidate license?(y ou n): ");
     scanf("%c", &students[studentnr].licenserev);
     printf("Student successfully added.%c", NEWLINE);
@@ -155,11 +155,11 @@ Student insertStudent(Student students[], int studentnr) {
     return students[studentnr];
 }
 
-void alterar_aluno(Student students[], int studentnr) {
+void modifyStudent(Student students[], int studentnr) {
     
 }
 
-void listar_aluno() {
+void listStudent() {
 
 }
 

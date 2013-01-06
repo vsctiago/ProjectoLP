@@ -18,12 +18,12 @@ typedef enum {
     FALSE, TRUE
 } Bool;
 
-void clear_input() {
+void clearInput() {
     char ch;
     while ((ch = getchar()) != '\n' && ch != EOF);
 }
 
-void doclear(void) {
+void doClear(void) {
   int i;
   for (i = 0; i < 600; i++) {
     putchar('\n');
