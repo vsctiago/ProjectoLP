@@ -149,6 +149,10 @@ void modifyStudent(Student students[], int studentnr) {
     
 }
 
+void removeStudent(Student students[], int studentnr) {
+    
+}
+
 void listStudent() {
 
 }
