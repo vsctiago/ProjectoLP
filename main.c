@@ -13,7 +13,7 @@
 #include "instructor.h"
 #include "utilities.h"
 #define SCALE 50
-#define CITYSIZE 20
+#define CITYSIZE 30
 /*
  * 
  */
